@@ -15,10 +15,13 @@ mysqlDialect..등 -->
 <!--            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>-->
 
             <!-- 옵션 -->
+<!--            데이터 쿼리문 보이기-->
             <property name="hibernate.show_sql" value="true"/>
+<!--        포멧팅-->
             <property name="hibernate.format_sql" value="true"/>
+<!--            쿼리문 주석 보이기-->
             <property name="hibernate.use_sql_comments"  value="true"/>
-            <property name="hibernate.hbm2ddl.auto" value="create" />
+<!--            <property name="hibernate.hbm2ddl.auto" value="create" />-->
         </properties>
     </persistence-unit>
 
