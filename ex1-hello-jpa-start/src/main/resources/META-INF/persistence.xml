@@ -21,7 +21,8 @@ mysqlDialect..등 -->
             <property name="hibernate.format_sql" value="true"/>
 <!--            쿼리문 주석 보이기-->
             <property name="hibernate.use_sql_comments"  value="true"/>
-<!--            <property name="hibernate.hbm2ddl.auto" value="create" />-->
+<!--            hibernate의 자동 테이블 생성기능 -->
+            <property name="hibernate.hbm2ddl.auto" value="create" />
         </properties>
     </persistence-unit>
 

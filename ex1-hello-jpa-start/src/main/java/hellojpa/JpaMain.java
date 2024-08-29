@@ -39,18 +39,36 @@ public class JpaMain {
 //            Member findmember = em.find(Member.class, 1L);
 //            em.remove(findmember);
 
-            //todo:JPQL
-           List<Member> result =  em.createQuery("select m from Member as m", Member.class).getResultList();
+//            //todo:JPQL
+//           List<Member> result =  em.createQuery("select m from Member as m", Member.class).getResultList();
+//
+//           for(Member m : result) {
+//               System.out.println("membername"+m.getName());
+//           }
 
-           for(Member m : result) {
-               System.out.println("membername"+m.getName());
-           }
+//           //todo:JPAL 페이징
+//            List<Member> result2 =  em.createQuery("select m from Member as m", Member.class)
+//                            .setFirstResult(1)
+//                            .setMaxResults(10)
+//                            .getResultList();
 
-           //todo:JPAL 페이징
-            List<Member> result2 =  em.createQuery("select m from Member as m", Member.class)
-                            .setFirstResult(1)
-                            .setMaxResults(10)
-                            .getResultList();
+
+
+            //todo: 준영속 상태
+            Member member = new Member();
+            member.setId(2L);
+            member.setName("HelloDD" );
+
+
+            em.persist(member);
+            em.close();
+            Member member2 = new Member();
+            member2.setName("asdfasdfasdfasdf");
+            System.out.println(member == member2);
+            em.persist(member2);
+            //커밋
+            //영속성 제거
+
 
             tx.commit();
 

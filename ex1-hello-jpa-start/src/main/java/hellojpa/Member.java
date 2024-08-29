@@ -7,7 +7,7 @@ import jakarta.persistence.Table;
 
 @Entity
 //수동으로 테이블 지정해주기
-//@Table(name="USER")
+@Table(name="BUGER")
 public class Member {
 
     //PK목적
@@ -17,6 +17,7 @@ public class Member {
     //DB와 해당 필드가 매칭이 안될경우 해당 형태로 변경되어 쿼리가 전달된다.
 //    @Column(name = "username")
     private String name;
+    private int age;
 
     public Long getId() {
         return id;
@@ -32,5 +33,13 @@ public class Member {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 }
